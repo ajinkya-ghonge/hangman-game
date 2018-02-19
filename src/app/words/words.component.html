@@ -1,0 +1,21 @@
+<!-- Division to show the game-->
+<div *ngIf="inProgress">
+  <ul *ngFor="let m of match" style="display: inline">{{m}}</ul>
+  <h1>SCORE : {{score}}</h1>
+  <h1>MISTAKES : {{mistake}}</h1>
+  <h1>HINT: {{movies.hint1}}</h1>
+  <br>
+  <table style="align-items: center">
+    <tr *ngFor="let word of words">
+      <td *ngFor="let w of word" (click)="onselect(w)">{{w.w}}</td>
+    </tr>
+  </table>
+</div>
+<!-- Division to show the result-->
+<div *ngIf="result">
+  <img src={{image}} height="20%" width="20%">
+  <br>
+  {{result}} The movie name is : {{movies.name}}
+  <br>
+  <button (click)="ngOnInit()">Play Again</button>
+</div>
